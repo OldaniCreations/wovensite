@@ -15,9 +15,12 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Elizabeth Oldani — Product Designer",
-  description: "Design that handles complexity. High-stakes product design for regulated environments.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  title: "Woven Logic Studio",
+  description:
+    "A design studio for complex systems—product, research, and technology.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
 };
 
 export default function RootLayout({
@@ -30,8 +33,8 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${lora.variable} scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-gray-900 antialiased">
-        <div className="flex-grow">{children}</div>
+      <body className="min-h-dvh bg-cream text-gray-900 antialiased">
+        {children}
       </body>
     </html>
   );

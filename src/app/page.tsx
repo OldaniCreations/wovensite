@@ -1,18 +1,18 @@
-import { client } from '@/lib/sanity.client'
-import { FEATURED_PROJECTS_QUERY } from '@/lib/sanity.queries'
-import Hero from '@/components/Hero'
-import ProjectGrid from '@/components/ProjectGrid'
-import { UseCase } from '@/types'
+import { Metadata } from "next"
+import Hero from "@/components/Hero"
 
-export const revalidate = 3600 // Revalidate every hour
+export const metadata: Metadata = {
+  title: "Woven Logic Studio",
+  description:
+    "A design studio for complex systems—product, research, and technology.",
+}
 
-export default async function Home() {
-  const projects = await client.fetch<UseCase[]>(FEATURED_PROJECTS_QUERY)
-
+export default function Home() {
   return (
-    <main className="container py-12 md:py-20">
-      <Hero />
-      <ProjectGrid projects={projects} />
+    <main className="flex min-h-dvh flex-col items-center justify-center px-4 py-10 sm:px-6 md:py-12 lg:px-8">
+      <div className="w-full max-w-7xl">
+        <Hero />
+      </div>
     </main>
   )
 }
