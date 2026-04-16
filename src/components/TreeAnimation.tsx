@@ -4,9 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 import type { DotLottie } from "@lottiefiles/dotlottie-web"
 
-/** Same asset as the Lottie Host embed — direct .lottie URL for the player. */
-const TREE_LOTTIE_SRC =
-  "https://lottie.host/5a4a3424-b8b6-4203-a21e-8db98262c2db/o2ds0oxfIa.lottie"
+/** Served from `/public` so dev/prod load same-origin (avoids extension/CORS fetch issues). */
+const TREE_LOTTIE_SRC = "/woven-logic-tree.lottie"
 
 /** Idle time between plays (animation stays at normal speed). */
 const PAUSE_BETWEEN_PLAYS_MS = 20_000
@@ -47,7 +46,7 @@ export default function TreeAnimation() {
 
   return (
     <div
-      className="w-full max-w-[min(100%,280px)] md:max-w-[320px] lg:max-w-[360px] mx-auto md:mx-0 aspect-[802/761]"
+      className="aspect-[802/761] w-full"
       aria-hidden="true"
     >
       <DotLottieReact
