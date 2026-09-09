@@ -3,16 +3,30 @@
 
 @layer base {
   :root {
-    --background: #f5f1e8;
-    --foreground: #1a1a1a;
+    --cream: #f4efe3;
+    --sand-light: #faf7f0;
+    --sand: #eee5d4;
+    --sand-deep: #c9b696;
+    --ink: #25261f;
+    --ink-soft: #5d5d50;
+    --olive: #5e6040;
+    --olive-dark: #353824;
+    --terracotta: #ad664b;
+    --terracotta-dark: #8d4f39;
+    --background: var(--cream);
+    --foreground: var(--ink);
   }
 
   html {
     @apply scroll-smooth;
+    background: var(--cream);
   }
 
   body {
-    @apply bg-[#f5f1e8] text-gray-900;
+    background:
+      radial-gradient(circle at 8% 2%, rgb(255 255 255 / 45%), transparent 28rem),
+      var(--cream);
+    color: var(--ink);
     font-family: var(--font-lora);
   }
 
@@ -29,25 +43,73 @@
     @apply transition-colors duration-300;
   }
 
-  /* Container with max width and padding */
+  ::selection {
+    background: var(--terracotta);
+    color: var(--sand-light);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--sand-light);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--terracotta-dark);
+  }
+
+  main:focus {
+    outline: none;
+  }
+
   .container {
-    @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
   }
 }
 
 @layer components {
+  .skip-link {
+    @apply fixed left-4 top-4 z-50 rounded-full bg-ink px-5 py-3 font-syne text-sm font-semibold text-sand-50;
+    transform: translateY(-6rem);
+  }
+
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
+
   .btn-primary {
-    @apply px-6 py-3 bg-teal-700 text-white rounded-lg font-semibold hover:bg-teal-800 transition-colors;
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition-colors;
+    background: var(--olive-dark);
+    color: var(--sand-light);
     font-family: var(--font-syne);
   }
 
-  .btn-secondary {
-    @apply px-6 py-3 border-2 border-teal-700 text-teal-700 rounded-lg font-semibold hover:bg-teal-50 transition-colors;
-    font-family: var(--font-syne);
+  .btn-primary:hover {
+    background: var(--terracotta-dark);
   }
 
   .tag {
-    @apply inline-block text-xs font-medium text-teal-700 uppercase tracking-wide;
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.18em];
+    color: var(--olive);
     font-family: var(--font-syne);
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 3px solid CanvasText;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

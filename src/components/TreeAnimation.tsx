@@ -22,23 +22,47 @@ export default function TreeAnimation() {
   }, [])
 
   useEffect(() => {
-    return () => clearPauseTimer()
-  }, [clearPauseTimer])
-
-  useEffect(() => {
     if (!dotLottie) return
 
+    const motionPreference = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    )
+
+    const applyMotionPreference = () => {
+      clearPauseTimer()
+
+      if (motionPreference.matches) {
+        dotLottie.unfreeze()
+        dotLottie.stop()
+        dotLottie.setFrame(0)
+        dotLottie.freeze()
+        return
+      }
+
+      dotLottie.unfreeze()
+      dotLottie.play()
+    }
+
     const onComplete = () => {
+      if (motionPreference.matches) return
+
       clearPauseTimer()
       pauseTimerRef.current = setTimeout(() => {
         pauseTimerRef.current = null
+        if (motionPreference.matches) return
         dotLottie.stop()
         dotLottie.play()
       }, PAUSE_BETWEEN_PLAYS_MS)
     }
 
+    motionPreference.addEventListener("change", applyMotionPreference)
+    dotLottie.addEventListener("ready", applyMotionPreference)
     dotLottie.addEventListener("complete", onComplete)
+    applyMotionPreference()
+
     return () => {
+      motionPreference.removeEventListener("change", applyMotionPreference)
+      dotLottie.removeEventListener("ready", applyMotionPreference)
       dotLottie.removeEventListener("complete", onComplete)
       clearPauseTimer()
     }
@@ -52,7 +76,7 @@ export default function TreeAnimation() {
       <DotLottieReact
         src={TREE_LOTTIE_SRC}
         loop={false}
-        autoplay
+        autoplay={false}
         className="h-full w-full"
         dotLottieRefCallback={setDotLottie}
       />

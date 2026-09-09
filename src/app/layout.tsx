@@ -16,9 +16,12 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Woven Logic Studio",
+  title: {
+    default: "Woven Logic Studio",
+    template: "%s | Woven Logic Studio",
+  },
   description:
-    "A design studio for complex systems—product, research, and technology.",
+    "An independent problem-solving practice working across research, strategy, design, technology, experimentation, and storytelling.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
   ),
@@ -34,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${lora.variable} scroll-smooth`}
     >
-      <body className="min-h-dvh bg-cream text-gray-900 antialiased">
+      <body className="min-h-dvh bg-cream text-ink antialiased">
         {children}
         <Analytics />
       </body>
