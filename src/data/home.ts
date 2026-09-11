@@ -3,51 +3,50 @@ export type Engagement = {
   focus: "Clarity" | "Evidence" | "Change" | "Capability"
   situation: string
   promise: string
-  detail: string
+  couldInclude: string
+  youLeaveWith: string
 }
-
-export const problemSignals = [
-  "Something important is unclear.",
-  "A promising idea needs evidence.",
-  "The current way is no longer working.",
-  "The team needs another kind of thinking inside the work.",
-] as const
 
 export const engagements: Engagement[] = [
   {
     name: "Explore",
     focus: "Clarity",
-    situation: "We don’t really know what’s going on.",
-    promise: "Find clarity about the real problem or opportunity.",
-    detail:
-      "For problems or opportunities that are poorly understood. Work can include interviews, observation, systems mapping, journey and ecosystem work, data review, synthesis, and reframing. Outputs might include a clearer problem definition, opportunity areas, shared understanding, and a focused direction.",
+    situation: "What’s actually going on?",
+    promise: "Find clarity and direction.",
+    couldInclude:
+      "interviews, observation, systems mapping, data review, or reframing.",
+    youLeaveWith:
+      "a clearer problem definition, shared understanding, and direction.",
   },
   {
     name: "Prove",
     focus: "Evidence",
-    situation: "We have an idea, but we don’t know if it will work.",
-    promise:
-      "Create evidence before committing heavily; the answer may be “don’t build it.”",
-    detail:
-      "For promising ideas that need to become tangible before major investment. Work can include prototyping, experiments, technical exploration, user testing, service walkthroughs, and measurement. The result may be a validated direction, a sharper next step, or a confident decision not to build.",
+    situation: "Will this work before we bet on it?",
+    promise: "Make the next decision with evidence.",
+    couldInclude:
+      "prototypes, experiments, technical exploration, or testing.",
+    youLeaveWith:
+      "evidence for the next decision. Sometimes that decision is “don’t build it.”",
   },
   {
     name: "Transform",
     focus: "Change",
-    situation: "What we have isn’t working anymore.",
-    promise:
-      "Rethink the product, service, process, or system beyond incremental fixes.",
-    detail:
-      "For existing products, services, processes, or systems that have accumulated friction and workarounds. Work can combine research, strategy, experience design, technology, and organizational alignment to find where the real problems live and create a better way of working.",
+    situation: "Why isn’t this working anymore?",
+    promise: "Create a better system, process, product, or tool.",
+    couldInclude:
+      "Research, strategy, design, technology, prototyping, or rebuilding what’s there.",
+    youLeaveWith:
+      "a better system, process, product, or tool—not just incremental fixes.",
   },
   {
     name: "Embed",
     focus: "Capability",
-    situation: "We need someone inside this with us.",
-    promise:
-      "Add cross-disciplinary thinking and making capacity to move the work forward.",
-    detail:
-      "For teams that need a cross-disciplinary thinking-and-making partner inside the work. Tristin can join an existing initiative, connect teams and disciplines, challenge assumptions, make ideas tangible, and help the team move with more clarity and momentum.",
+    situation: "Who can help us move this forward?",
+    promise: "Add clarity, momentum, and capacity.",
+    couldInclude:
+      "joining the work, connecting disciplines, or making ideas tangible.",
+    youLeaveWith:
+      "more clarity, momentum, and making capacity inside the team.",
   },
 ]
 

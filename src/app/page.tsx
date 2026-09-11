@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import AboutIntro from "@/components/AboutIntro"
 import ContactCTA from "@/components/ContactCTA"
-import EngagementModes from "@/components/EngagementModes"
 import FeaturedProof from "@/components/FeaturedProof"
 import Hero from "@/components/Hero"
 import HowWovenWorks from "@/components/HowWovenWorks"
@@ -25,7 +24,6 @@ export default function Home() {
       <main id="main-content" tabIndex={-1}>
         <Hero />
         <ProblemRecognition />
-        <EngagementModes />
         <HowWovenWorks />
         <FeaturedProof />
         <AboutIntro />

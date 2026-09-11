@@ -5,7 +5,7 @@ export default function AboutIntro() {
       aria-labelledby="about-heading"
       className="bg-cream scroll-mt-6"
     >
-      <div className="container grid gap-12 py-20 md:py-28 lg:grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.38fr)] lg:gap-20">
+      <div className="container grid gap-9 py-14 sm:py-16 md:py-24 lg:grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.38fr)] lg:gap-20">
         <div>
           <p className="tag mb-5">About Tristin</p>
           <h2
@@ -22,7 +22,7 @@ export default function AboutIntro() {
             inside one role.
           </p>
 
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-[var(--ink-soft)]">
+          <div className="mt-6 space-y-5 text-lg leading-relaxed text-[var(--ink-soft)] sm:mt-8 sm:space-y-6">
             <p>
               Sometimes I’m researching to understand what’s really happening.
               Sometimes I’m reframing the problem, designing a new experience,
@@ -40,7 +40,7 @@ export default function AboutIntro() {
             </p>
           </div>
 
-          <p className="mt-10 border-l-2 border-terracotta-500 pl-6 text-xl font-semibold leading-relaxed text-olive-800">
+          <p className="mt-8 border-l-2 border-terracotta-500 pl-5 text-xl font-semibold leading-relaxed text-olive-800 sm:mt-10 sm:pl-6">
             Woven Logic Studio is the independent practice I built to work that
             way.
           </p>

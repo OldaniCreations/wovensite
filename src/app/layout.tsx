@@ -12,6 +12,7 @@ const syne = Syne({
 const lora = Lora({
   variable: "--font-lora",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
