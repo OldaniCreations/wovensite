@@ -116,15 +116,13 @@ export default function ProblemCard({
             : "border-olive-800/25 bg-cream hover:border-olive-800/45"
         }`}
       >
-        <div>
-          <p className="whitespace-nowrap font-syne text-xs font-bold uppercase tracking-[0.06em] text-terracotta-600 xl:text-sm">
-            {name} · {focus}
-          </p>
-        </div>
+        <p className="font-syne text-xs font-bold uppercase leading-snug tracking-[0.06em] text-terracotta-600 xl:text-sm">
+          {name} · {focus}
+        </p>
 
         <h3
           id={headingId}
-          className="mt-6 min-h-[3lh] font-lora text-2xl font-semibold leading-snug text-ink"
+          className="mt-6 min-h-[2lh] font-lora text-2xl font-semibold leading-snug text-balance text-ink xl:min-h-[3lh]"
         >
           {situation}
         </h3>
@@ -133,7 +131,7 @@ export default function ProblemCard({
           <ProblemSignalGraphic name={name} />
         </div>
 
-        <p className="mt-4 min-h-[2lh] border-l-2 border-terracotta-500 pl-3 font-syne text-sm font-semibold leading-relaxed text-olive-800">
+        <p className="mt-4 min-h-[2lh] border-l-2 border-terracotta-500 pl-3 font-syne text-sm font-semibold leading-relaxed text-olive-800 xl:min-h-[3lh]">
           {promise}
         </p>
 
@@ -156,7 +154,7 @@ export default function ProblemCard({
           </p>
         </div>
 
-        <div className="mt-auto flex items-end justify-end pt-7">
+        <div className="mt-7 flex justify-end">
           <button
             type="button"
             id={buttonId}

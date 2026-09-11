@@ -26,7 +26,7 @@ export default function ProblemRecognition() {
           </p>
         </div>
 
-        <ul className="mt-9 grid items-start gap-4 sm:grid-cols-2 md:mt-12 lg:grid-cols-4">
+        <ul className="mt-9 grid items-start gap-4 sm:grid-cols-2 md:mt-12 xl:grid-cols-4">
           {engagements.map((engagement) => (
             <ProblemCard key={engagement.name} {...engagement} />
           ))}
