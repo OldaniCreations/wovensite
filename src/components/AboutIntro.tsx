@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function AboutIntro() {
   return (
     <section
@@ -14,6 +16,16 @@ export default function AboutIntro() {
           >
             I’m Tristin.
           </h2>
+          <div className="relative mt-8 aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl border border-olive-800/15 bg-sand-100/60 sm:mt-10 sm:rounded-3xl">
+            <Image
+              src="/poolBG.jpg"
+              alt="Tristin smiling outdoors by a pool"
+              fill
+              className="object-cover object-[center_20%]"
+              sizes="(min-width: 1024px) 25vw, 80vw"
+              priority
+            />
+          </div>
         </div>
 
         <div className="max-w-3xl">

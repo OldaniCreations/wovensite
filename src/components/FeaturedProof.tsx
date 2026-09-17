@@ -1,16 +1,15 @@
+"use client"
+
+import { useState } from "react"
+
 import ProofProjectCard from "@/components/ProofProjectCard"
 import { proofProjects } from "@/data/home"
 
-const projectLayouts = [
-  "lg:col-span-7",
-  "lg:col-span-5",
-  "lg:col-span-12",
-  "lg:col-span-4",
-  "lg:col-span-4",
-  "lg:col-span-4",
-] as const
-
 export default function FeaturedProof() {
+  const [expandedProjects, setExpandedProjects] = useState<Set<number>>(
+    () => new Set(),
+  )
+
   return (
     <section
       id="work"
@@ -29,19 +28,30 @@ export default function FeaturedProof() {
             </h2>
           </div>
           <p className="max-w-xl text-lg leading-relaxed text-[var(--ink-soft)] md:justify-self-end">
-            Different industries. Different technologies. Different
-            constraints. The common thread is getting inside a difficult
-            problem, finding a useful way through it, and making something real.
+            Different problems ask for different kinds of work.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 md:mt-12 lg:grid-cols-12">
+        <div className="mt-10 grid items-start gap-5 md:mt-12 lg:grid-cols-3">
           {proofProjects.map((project, index) => (
             <ProofProjectCard
               key={project.title}
               {...project}
               index={index}
-              className={projectLayouts[index]}
+              isExpanded={expandedProjects.has(index)}
+              onToggle={() => {
+                setExpandedProjects((current) => {
+                  const next = new Set(current)
+
+                  if (next.has(index)) {
+                    next.delete(index)
+                  } else {
+                    next.add(index)
+                  }
+
+                  return next
+                })
+              }}
             />
           ))}
         </div>
