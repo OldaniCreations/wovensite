@@ -1,18 +1,35 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
+import AboutIntro from "@/components/AboutIntro"
+import ContactCTA from "@/components/ContactCTA"
+import FeaturedProof from "@/components/FeaturedProof"
 import Hero from "@/components/Hero"
+import HowWovenWorks from "@/components/HowWovenWorks"
+import ProblemRecognition from "@/components/ProblemRecognition"
+import SiteFooter from "@/components/SiteFooter"
+import SiteHeader from "@/components/SiteHeader"
 
 export const metadata: Metadata = {
-  title: "Woven Logic Studio",
+  title: "Woven Logic Studio | Complex problem-solving with Tristin",
   description:
-    "A design studio for complex systems—product, research, and technology.",
+    "Tristin works across research, strategy, design, technology, experimentation, and storytelling to help teams understand difficult problems and find a useful way through.",
 }
 
 export default function Home() {
   return (
-    <main className="flex min-h-dvh flex-col items-center justify-center px-4 py-6 sm:px-6 sm:py-8 md:py-10 lg:px-8">
-      <div className="w-full max-w-7xl">
+    <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <SiteHeader />
+      <main id="main-content" tabIndex={-1}>
         <Hero />
-      </div>
-    </main>
+        <ProblemRecognition />
+        <HowWovenWorks />
+        <FeaturedProof />
+        <AboutIntro />
+        <ContactCTA />
+      </main>
+      <SiteFooter />
+    </>
   )
 }

@@ -9,22 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        teal: {
-          50: '#f0f9fa',
-          100: '#e0f2f5',
-          200: '#b3dfe8',
-          300: '#86cbdb',
-          400: '#5ab8ce',
-          500: '#2e9fc4',
-          600: '#1a7f9c',
-          700: '#135f7f',
-          800: '#0f4a66',
-          900: '#0a354d',
+        cream: '#f4efe3',
+        sand: {
+          50: '#faf7f0',
+          100: '#eee5d4',
+          200: '#ded0b9',
+          300: '#c9b696',
         },
+        olive: {
+          500: '#73724d',
+          600: '#5e6040',
+          700: '#484b31',
+          800: '#353824',
+        },
+        terracotta: {
+          400: '#c77f62',
+          500: '#ad664b',
+          600: '#8d4f39',
+        },
+        ink: '#25261f',
       },
       backgroundColor: {
-        'cream': '#f5f1e8',
-        'warm': '#faf8f3',
+        warm: '#faf7f0',
       },
       fontFamily: {
         syne: ['var(--font-syne)', 'sans-serif'],

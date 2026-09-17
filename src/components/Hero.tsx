@@ -4,62 +4,46 @@ const CONTACT_EMAIL = "contact@wovenlogic.studio"
 
 export default function Hero() {
   return (
-    <section className="w-full">
-      {/*
-        Tree + copy sit in two grid columns on md+ so the text stack (eyebrow, h1, body)
-        is one flex column with tight gaps — avoids the old grid where row height matched
-        the tall Lottie and vertically centered the headline, creating huge gaps.
-      */}
-      <div
-        className="
-          flex w-full flex-col gap-4
-          sm:grid sm:grid-cols-[auto,minmax(0,1fr)] sm:items-start sm:gap-x-8 sm:gap-y-0
-          md:gap-x-10 lg:gap-x-12 xl:gap-x-14
-        "
-      >
-        <div
-          className="
-            mx-auto w-full max-w-[min(100%,280px)] shrink-0
-            sm:mx-0 sm:max-w-[280px] md:max-w-[300px] lg:max-w-[340px]
-          "
-        >
-          <TreeAnimation />
-        </div>
-
-        <div className="flex min-w-0 flex-col gap-1 md:min-w-0">
-          <p
-            style={{ fontFamily: "var(--font-syne)" }}
-            className="text-sm font-medium uppercase leading-none tracking-[0.2em] text-teal-700"
-          >
-            Woven Logic Studio
-          </p>
-
+    <section
+      id="top"
+      aria-labelledby="hero-heading"
+      className="relative isolate scroll-mt-6 overflow-hidden"
+    >
+      <div className="container grid items-start gap-8 py-10 sm:gap-10 md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,22rem)] md:gap-12 md:py-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(20rem,26rem)] lg:py-16">
+        <div className="min-w-0">
           <h1
-            style={{ fontFamily: "var(--font-syne)" }}
-            className="max-w-3xl text-balance text-5xl font-bold leading-[1.06] tracking-tight text-gray-900 md:text-6xl"
+            id="hero-heading"
+            className="max-w-5xl text-[clamp(3rem,7.2vw,7.5rem)] leading-[0.94] tracking-[-0.055em] text-ink"
           >
-            A design studio for complex systems
+            <span className="block">
+              Complex problems don’t fit neatly into boxes.
+            </span>
+            <span className="mt-4 block text-olive-700">
+              Neither do the best ways of solving them.
+            </span>
           </h1>
 
-          <p className="max-w-3xl text-xl leading-snug text-gray-600 md:text-2xl md:leading-relaxed">
-            We partner with teams at the intersection of product, research, and
-            technology—turning ambiguity into clear, humane experiences.
-          </p>
-
-          <div className="mt-5 border-t border-gray-200/90 pt-4 md:mt-6 md:pt-5">
-            <p
-              style={{ fontFamily: "var(--font-syne)" }}
-              className="mb-2 text-sm font-medium uppercase tracking-widest text-gray-500"
-            >
-              Contact
-            </p>
+          <div className="mt-10 border-t border-olive-800/25 pt-7">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-xl font-medium text-teal-700 underline-offset-4 transition-colors hover:text-teal-800 hover:underline md:text-2xl"
+              className="btn-primary group w-fit gap-3 whitespace-nowrap"
             >
-              {CONTACT_EMAIL}
+              Tell me what you’re trying to solve
+              <span
+                aria-hidden="true"
+                className="transition-transform group-hover:translate-x-1"
+              >
+                →
+              </span>
             </a>
           </div>
+        </div>
+
+        <div className="order-first w-full max-w-[17.5rem] sm:max-w-[19rem] md:order-none md:max-w-none md:self-center">
+          <TreeAnimation />
+          <p className="mt-2 text-center font-syne text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-olive-600">
+            Follow the problem
+          </p>
         </div>
       </div>
     </section>
