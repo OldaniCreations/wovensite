@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = "contact@wovenlogic.studio"
+import Link from "next/link"
 
 export default function ContactCTA() {
   return (
@@ -19,8 +19,8 @@ export default function ContactCTA() {
             Have a problem you’re trying to solve?
           </h2>
 
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
+          <Link
+            href="/contact"
             className="group inline-flex w-fit items-center gap-3 rounded-full bg-sand-50 px-6 py-3 font-syne font-semibold text-olive-800 transition-colors hover:bg-olive-800 hover:text-sand-50"
           >
             Tell me what you’re trying to solve
@@ -30,7 +30,7 @@ export default function ContactCTA() {
             >
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,10 +1,12 @@
+import Link from "next/link"
+
 const CONTACT_EMAIL = "contact@wovenlogic.studio"
 
 const footerLinks = [
-  { label: "Home", href: "#top" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#top" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/contact" },
 ] as const
 
 export default function SiteFooter() {
@@ -13,12 +15,12 @@ export default function SiteFooter() {
       <div className="container py-10 md:py-12">
         <div className="grid gap-10 border-b border-sand-200/20 pb-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
           <div>
-            <a
-              href="#top"
+            <Link
+              href="/"
               className="font-syne text-sm font-bold uppercase tracking-[0.16em] text-sand-50 hover:text-terracotta-400"
             >
               Woven Logic Studio
-            </a>
+            </Link>
             <p className="mt-4 max-w-md leading-relaxed text-sand-200">
               An independent problem-solving practice for things that don’t
               have obvious answers.
@@ -29,12 +31,12 @@ export default function SiteFooter() {
             <ul className="grid grid-cols-2 gap-x-10 gap-y-4 font-syne text-sm font-semibold sm:flex sm:flex-wrap">
               {footerLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sand-100 hover:text-terracotta-400"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

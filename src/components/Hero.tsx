@@ -1,6 +1,6 @@
-import TreeAnimation from "@/components/TreeAnimation"
+import Link from "next/link"
 
-const CONTACT_EMAIL = "contact@wovenlogic.studio"
+import TreeAnimation from "@/components/TreeAnimation"
 
 export default function Hero() {
   return (
@@ -24,8 +24,8 @@ export default function Hero() {
           </h1>
 
           <div className="mt-10 border-t border-olive-800/25 pt-7">
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
+            <Link
+              href="/contact"
               className="btn-primary group w-fit gap-3 whitespace-nowrap"
             >
               Tell me what you’re trying to solve
@@ -35,7 +35,7 @@ export default function Hero() {
               >
                 →
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 
