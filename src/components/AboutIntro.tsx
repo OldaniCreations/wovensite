@@ -9,22 +9,29 @@ export default function AboutIntro() {
     >
       <div className="container grid gap-9 py-14 sm:py-16 md:py-24 lg:grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.38fr)] lg:gap-20">
         <div>
-          <p className="tag mb-5">About Tristin</p>
-          <h2
-            id="about-heading"
-            className="text-5xl leading-none tracking-[-0.045em] text-ink sm:text-6xl"
-          >
-            I’m Tristin.
-          </h2>
-          <div className="relative mt-8 aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl border border-olive-800/15 bg-sand-100/60 sm:mt-10 sm:rounded-3xl">
-            <Image
-              src="/poolBG.jpg"
-              alt="Tristin smiling outdoors by a pool"
-              fill
-              className="object-cover object-[center_20%]"
-              sizes="(min-width: 1024px) 25vw, 80vw"
-              priority
-            />
+          <p className="tag mb-5">About</p>
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
+            <div className="relative aspect-[3/4] w-full max-w-[10.5rem] shrink-0 overflow-hidden rounded-2xl border border-olive-800/15 bg-sand-100/60 shadow-[0_12px_40px_rgba(53,56,36,0.1)] sm:max-w-[11.5rem] sm:rounded-3xl">
+              <Image
+                src="/poolBG.jpg"
+                alt="Tristin Oldani smiling outdoors by a pool"
+                fill
+                className="object-cover object-[center_20%]"
+                sizes="(min-width: 1024px) 12rem, 42vw"
+                priority
+              />
+            </div>
+            <div className="min-w-0">
+              <h2
+                id="about-heading"
+                className="font-syne text-[clamp(2rem,7vw,3.25rem)] font-bold leading-[1.12] tracking-[-0.03em] text-ink"
+              >
+                Tristin Oldani
+              </h2>
+              <p className="mt-3 text-lg leading-snug text-[var(--ink-soft)] sm:text-xl">
+                Solving complex problems creatively.
+              </p>
+            </div>
           </div>
         </div>
 
