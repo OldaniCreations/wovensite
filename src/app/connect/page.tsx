@@ -78,10 +78,27 @@ export default function ConnectPage() {
             </Link>
 
             <div className="mt-8 border-t border-olive-800/20 pt-7 sm:mt-9 sm:pt-8">
-              <p className="tag mb-4">Tristin Oldani</p>
-              <h1 className="text-[clamp(2.75rem,10vw,4.5rem)] leading-[0.96] tracking-[-0.05em] text-ink">
-                Let’s connect
-              </h1>
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+                <div className="relative aspect-square w-[5.75rem] shrink-0 overflow-hidden rounded-2xl border border-olive-800/15 bg-sand-100/60 shadow-[0_10px_32px_rgba(53,56,36,0.12)] sm:w-[6.5rem] sm:rounded-[1.35rem]">
+                  <Image
+                    src="/poolBG.jpg"
+                    alt="Tristin Oldani"
+                    fill
+                    className="object-cover object-[center_20%]"
+                    sizes="104px"
+                    priority
+                  />
+                </div>
+                <div className="min-w-0">
+                  <h1 className="font-syne text-[clamp(2rem,7vw,3.25rem)] font-bold leading-[1.12] tracking-[-0.03em] text-ink">
+                    Tristin Oldani
+                  </h1>
+                  <p className="mt-3 text-lg leading-snug text-[var(--ink-soft)] sm:text-xl">
+                    Solving complex problems creatively.
+                  </p>
+                  <p className="tag mt-4">Let’s connect</p>
+                </div>
+              </div>
 
               <div className="mt-6 space-y-4 leading-relaxed sm:mt-7">
                 <p className="text-lg text-ink sm:text-xl">

@@ -1,6 +1,3 @@
-"use client"
-
-import { useState } from "react"
 import type { Engagement } from "@/data/home"
 
 type ProblemCardProps = Engagement
@@ -101,20 +98,13 @@ export default function ProblemCard({
   couldInclude,
   youLeaveWith,
 }: ProblemCardProps) {
-  const [expanded, setExpanded] = useState(false)
   const headingId = `problem-${name.toLowerCase()}`
-  const panelId = `${headingId}-details`
-  const buttonId = `${headingId}-toggle`
 
   return (
     <li>
       <article
         aria-labelledby={headingId}
-        className={`group/card relative flex flex-col overflow-hidden border p-5 transition-colors sm:p-6 ${
-          expanded
-            ? "border-olive-800/45 bg-sand-50"
-            : "border-olive-800/25 bg-cream hover:border-olive-800/45"
-        }`}
+        className="group/card relative flex flex-col overflow-hidden border border-olive-800/45 bg-sand-50 p-5 sm:p-6"
       >
         <p className="font-syne text-xs font-bold uppercase leading-snug tracking-[0.06em] text-terracotta-600 xl:text-sm">
           {name} · {focus}
@@ -135,45 +125,19 @@ export default function ProblemCard({
           {promise}
         </p>
 
-        <div
-          id={panelId}
-          hidden={!expanded}
-          className="mt-5 space-y-4 border-t border-olive-800/20 pt-5"
-        >
+        <div className="mt-5 space-y-4 border-t border-olive-800/20 pt-5">
           <p className="leading-relaxed text-[var(--ink-soft)]">
-            <span className="font-syne text-xs font-semibold uppercase tracking-[0.14em] text-olive-700">
+            <span className="font-syne text-xs font-bold uppercase tracking-[0.14em] text-terracotta-600 sm:text-sm">
               Could include{" "}
             </span>
             {couldInclude}
           </p>
           <p className="leading-relaxed text-[var(--ink-soft)]">
-            <span className="font-syne text-xs font-semibold uppercase tracking-[0.14em] text-olive-700">
+            <span className="font-syne text-xs font-bold uppercase tracking-[0.14em] text-terracotta-600 sm:text-sm">
               You leave with{" "}
             </span>
             {youLeaveWith}
           </p>
-        </div>
-
-        <div className="mt-7 flex justify-end">
-          <button
-            type="button"
-            id={buttonId}
-            aria-expanded={expanded}
-            aria-controls={panelId}
-            onClick={() => setExpanded((open) => !open)}
-            className="flex w-fit cursor-pointer items-center gap-2 rounded-sm font-syne text-sm font-semibold text-olive-800 hover:text-terracotta-600"
-          >
-            {expanded ? "View less" : "View more"}
-            <span className="sr-only"> about {name}</span>
-            <span
-              aria-hidden="true"
-              className={`inline-block text-terracotta-600 transition-transform ${
-                expanded ? "rotate-180" : ""
-              }`}
-            >
-              ↓
-            </span>
-          </button>
         </div>
       </article>
     </li>
