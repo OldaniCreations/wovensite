@@ -7,7 +7,7 @@ export default function Hero() {
     <section
       id="top"
       aria-labelledby="hero-heading"
-      className="relative isolate scroll-mt-6 overflow-hidden"
+      className="relative isolate scroll-mt-[var(--site-header-offset)] overflow-hidden"
     >
       <div className="container grid items-start gap-8 py-10 sm:gap-10 md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,22rem)] md:gap-12 md:py-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(20rem,26rem)] lg:py-16">
         <div className="min-w-0">

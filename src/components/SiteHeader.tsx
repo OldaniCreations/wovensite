@@ -9,8 +9,8 @@ const navigation = [
 
 export default function SiteHeader() {
   return (
-    <header className="bg-cream">
-      <div className="container flex flex-col gap-4 border-b border-olive-800/20 py-4 sm:flex-row sm:items-center sm:justify-between sm:py-5">
+    <header className="sticky top-0 z-40 border-b border-olive-800/20 bg-cream/95 backdrop-blur-md supports-[backdrop-filter]:bg-cream/90">
+      <div className="container flex flex-col gap-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:py-5">
         <Link
           href="/"
           className="font-syne text-sm font-bold uppercase tracking-[0.16em] text-olive-800"

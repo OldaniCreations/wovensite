@@ -5,7 +5,7 @@ export default function AboutIntro() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="bg-cream scroll-mt-6"
+      className="scroll-mt-[var(--site-header-offset)] bg-cream"
     >
       <div className="container grid gap-9 py-14 sm:py-16 md:py-24 lg:grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.38fr)] lg:gap-20">
         <div>

@@ -14,7 +14,7 @@ export default function FeaturedProof() {
     <section
       id="work"
       aria-labelledby="featured-proof-heading"
-      className="scroll-mt-6 bg-sand-100/55"
+      className="scroll-mt-[var(--site-header-offset)] bg-sand-100/55"
     >
       <div className="container py-14 sm:py-16 md:py-24">
         <div className="grid gap-5 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.72fr)] md:items-end md:gap-8">

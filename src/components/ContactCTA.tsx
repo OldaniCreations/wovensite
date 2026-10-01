@@ -5,7 +5,7 @@ export default function ContactCTA() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="scroll-mt-6 bg-terracotta-600 text-sand-50"
+      className="scroll-mt-[var(--site-header-offset)] bg-terracotta-600 text-sand-50"
     >
       <div className="container py-14 sm:py-16 md:py-24">
         <p className="mb-5 font-syne text-xs font-semibold uppercase tracking-[0.18em] text-sand-100">
