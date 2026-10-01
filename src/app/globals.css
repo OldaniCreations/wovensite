@@ -15,11 +15,13 @@
     --terracotta-dark: #8d4f39;
     --background: var(--cream);
     --foreground: var(--ink);
+    --site-header-offset: 5.5rem;
   }
 
   html {
     @apply scroll-smooth;
     background: var(--cream);
+    scroll-padding-top: var(--site-header-offset);
   }
 
   body {
